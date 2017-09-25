@@ -5,29 +5,41 @@ namespace RestAppBundle\Controller;
 // use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\FOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class PruebaController extends FOSRestController
 {
     /**
      * @Route("/api/prueba")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        // return $this->render('RestAppBundle:prueba:index.html.twig', array(
-        //     // ...
-        // ));
+        $data = array(
+          "Usuarios" => array(
+            array(
+              "nombre"   => "Víctor",
+              "Apellido" => "Robles"
+            ),
+            array(
+              "nombre"   => "Antonio",
+              "Apellido" => "Martinez"
+            ),
 
-        $data = array("Usuarios" => array(
-        array(
-            "nombre"   => "Víctor",
-            "Apellido" => "Robles"
-        ),
-        array(
-            "nombre"   => "Antonio",
-            "Apellido" => "Martinez"
-        )));
+          )
+        );
 
-        return $data;
+        $nombre = $request->get('nombre');
+        $apellido = $request->get('apellido');
+        if (!empty($nombre) && !empty($apellido)){
+          $data['Usuarios'][] = array(
+            "nombre" => $request->get('nombre'),
+            "Apellido" => $request->get('apellido')
+          );
+        }
+
+        $view = $this->view($data);
+        return $this->handleView($view);
     }
 
 }
