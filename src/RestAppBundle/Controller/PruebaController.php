@@ -2,10 +2,11 @@
 
 namespace RestAppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+// use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class PruebaController extends Controller
+class PruebaController extends FOSRestController
 {
     /**
      * @Route("/api/prueba")
