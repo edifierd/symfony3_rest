@@ -6,12 +6,14 @@ namespace RestAppBundle\Controller;
 use FOS\RestBundle\Controller\FOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 
 class PruebaController extends FOSRestController
 {
     /**
      * @Route("/api/prueba")
+     * @Method({"POST"})
      */
     public function indexAction(Request $request)
     {
