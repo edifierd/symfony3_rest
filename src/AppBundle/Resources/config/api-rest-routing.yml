@@ -1,0 +1,4 @@
+api_prueba:
+    type: rest
+    resource: "@AppBundle/Controller/PruebaController.php"
+    name_prefix:  api_prueba_

@@ -1,6 +1,6 @@
 <?php
 
-namespace RestAppBundle\Controller;
+namespace AppBundle\Controller;
 
 // use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\FOSRestController;

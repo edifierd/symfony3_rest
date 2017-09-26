@@ -1,9 +1,9 @@
 rest_app:
-    resource: "@RestAppBundle/Controller/"
+    resource: "@AppBundle/Controller/"
     type:     annotation
     prefix:   /
 
 app_bundle_api:
     type:     rest
     prefix:   /api
-    resource: "@RestAppBundle/Resources/config/api-rest-routing.yml"
+    resource: "@AppBundle/Resources/config/api-rest-routing.yml"
